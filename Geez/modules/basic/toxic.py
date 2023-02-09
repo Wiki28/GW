@@ -6,19 +6,14 @@
 # <https://www.github.com/mrismanaziz/PyroMan-Userbot/blob/main/LICENSE/>.
 #
 # t.me/SharingUserbot & t.me/Lunatic0de
-
 import asyncio
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from geezlibs.geez.helpers.adminHelpers import DEVS
-from geezlibs.geez.helpers.basic import edit_or_reply
-from geezlibs.geez.helpers.PyroHelpers import ReplyCheck
-from geezlibs.geez.utils import extract_user, extract_user_and_reason
-from config import BLACKLIST_CHAT
-from config import CMD_HANDLER as cmd
-from .help import add_command_help
-
+from geezlibs.geez.helper.basic import edit_or_reply
+from geezlibs.geez.helper.PyroHelpers import ReplyCheck
+from Geez.modules.basic import add_command_help
+from Geez import cmds
 
 @Client.on_message(filters.command("jamet", cmd) & filters.me)
 async def ngejamet(client: Client, message: Message):
