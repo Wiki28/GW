@@ -111,7 +111,7 @@ async def pingme(client: Client, message: Message):
     await xx.edit("**Pinging...**")
     await xx.edit("**Pinging....**")
     await asyncio.sleep(1)
-    await xx.edit(f"**Geez - Pyro!!🎈**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
+    await xx.edit(f"**Wiki PyroBot**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
     
 @Client.on_message(
     filters.command("ping", cmds) & (filters.me)
@@ -171,6 +171,6 @@ add_command_help(
     "Alive",
     [
         [f"{cmds}alive", "Check bot alive or not."],
-        [f"{cmds}geez", "Check bot alive or not."],
+        [f"{cmds}wiki", "Check bot alive or not."],
     ],
 )
