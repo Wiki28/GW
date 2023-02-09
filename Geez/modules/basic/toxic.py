@@ -15,7 +15,7 @@ from geezlibs.geez.helper.PyroHelpers import ReplyCheck
 from Geez.modules.basic import add_command_help
 from Geez import cmds
 
-@Client.on_message(filters.command("jamet", cmd) & filters.me)
+@Client.on_message(filters.command("jamet", cmds) & filters.me)
 async def ngejamet(client: Client, message: Message):
     user_id = await extract_user(message)
     xx = await edit_or_reply(message, "**WOII**")
@@ -41,10 +41,7 @@ async def ngejamet(client: Client, message: Message):
     await xx.edit("**LEMBEK NGENTOT🥵**")
 
 
-@Client.on_message(
-    filters.command("cgbn", ["."]) & filters.user(DEVS) & ~filters.via_bot
-)
-@Client.on_message(filters.command("gbn", cmd) & filters.me)
+@Client.on_message(filters.command("gbn", cmds) & filters.me)
 async def globalfake(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     user = await client.get_users(user_id)
@@ -55,11 +52,7 @@ async def globalfake(client: Client, message: Message):
     await xx.edit(f"**\\\ Berhasil Gbanning //** \nFirst Name : [{user.first_name}](tg://user?id={user.id})\nReason : {reason}")
     
 
-
-@Client.on_message(
-    filters.command("cgmt", ["."]) & filters.user(DEVS) & ~filters.via_bot
-)
-@Client.on_message(filters.command("gmt", cmd) & filters.me)
+@Client.on_message(filters.command("gmt", cmds) & filters.me)
 async def fakegmute(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     user = await client.get_users(user_id)
@@ -71,7 +64,7 @@ async def fakegmute(client: Client, message: Message):
     await xx.edit(f"**\\\ Berhasil Gmute //** \nFirst Name : [{user.first_name}](tg://user?id={user.id})\nReason : {reason}")
     
 
-@Client.on_message(filters.command("ywc", cmd) & filters.me)
+@Client.on_message(filters.command("ywc", cmds) & filters.me)
 async def ywc(client: Client, message: Message):
     await asyncio.gather(
         message.delete(),
@@ -83,7 +76,7 @@ async def ywc(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("pp", cmd) & filters.me)
+@Client.on_message(filters.command("pp", cmds) & filters.me)
 async def toxicpp(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -96,7 +89,7 @@ async def toxicpp(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("dp", cmd) & filters.me)
+@Client.on_message(filters.command("dp", cmds) & filters.me)
 async def toxicdp(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -109,7 +102,7 @@ async def toxicdp(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("so", cmd) & filters.me)
+@Client.on_message(filters.command("so", cmds) & filters.me)
 async def toxicso(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -122,7 +115,7 @@ async def toxicso(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("nb", cmd) & filters.me)
+@Client.on_message(filters.command("nb", cmds) & filters.me)
 async def toxicnb(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -135,7 +128,7 @@ async def toxicnb(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("met", cmd) & filters.me)
+@Client.on_message(filters.command("met", cmds) & filters.me)
 async def toxicmet(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -148,7 +141,7 @@ async def toxicmet(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("war", cmd) & filters.me)
+@Client.on_message(filters.command("war", cmds) & filters.me)
 async def toxicwer(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -161,7 +154,7 @@ async def toxicwer(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("wartai", cmd) & filters.me)
+@Client.on_message(filters.command("wartai", cmds) & filters.me)
 async def toxicwartai(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -174,7 +167,7 @@ async def toxicwartai(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("kismin", cmd) & filters.me)
+@Client.on_message(filters.command("kismin", cmds) & filters.me)
 async def toxickismin(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -187,7 +180,7 @@ async def toxickismin(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("ded", cmd) & filters.me)
+@Client.on_message(filters.command("ded", cmds) & filters.me)
 async def toxicded(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -200,7 +193,7 @@ async def toxicded(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("sokab", cmd) & filters.me)
+@Client.on_message(filters.command("sokab", cmds) & filters.me)
 async def toxicsokab(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -213,7 +206,7 @@ async def toxicsokab(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("gembel", cmd) & filters.me)
+@Client.on_message(filters.command("gembel", cmds) & filters.me)
 async def toxicgembel(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -226,7 +219,7 @@ async def toxicgembel(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("cuih", cmd) & filters.me)
+@Client.on_message(filters.command("cuih", cmds) & filters.me)
 async def toxiccuih(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -239,7 +232,7 @@ async def toxiccuih(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("dih", cmd) & filters.me)
+@Client.on_message(filters.command("dih", cmds) & filters.me)
 async def toxicdih(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -252,7 +245,7 @@ async def toxicdih(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("gcs", cmd) & filters.me)
+@Client.on_message(filters.command("gcs", cmds) & filters.me)
 async def toxicgcs(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -265,7 +258,7 @@ async def toxicgcs(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("skb", cmd) & filters.me)
+@Client.on_message(filters.command("skb", cmds) & filters.me)
 async def toxicskb(client: Client, message: Message):
     user_id = await extract_user(message)
     await asyncio.gather(
@@ -278,7 +271,7 @@ async def toxicskb(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("virtual", cmd) & filters.me)
+@Client.on_message(filters.command("virtual", cmds) & filters.me)
 async def toxicvirtual(client: Client, message: Message):
     user_id = await extract_user(message)
     xx = await edit_or_reply(message, "**OOOO**")
