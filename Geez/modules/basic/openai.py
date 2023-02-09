@@ -16,8 +16,8 @@ import os
 import json
 import random
 
-@gez.on_message(filters.command("cask", cmds) & filters.user(DEVS) & ~filters.me)
-@gez.on_message(filters.command("ask", cmds) & filters.me)
+@gez.on_message(filters.command("cnanya", cmds) & filters.user(DEVS) & ~filters.me)
+@gez.on_message(filters.command("nanya", cmds) & filters.me)
 async def openai(c, m):
     if len(m.command) == 1:
         return await m.reply(f"Ketik <code>{cmds}{m.command[0]} [question]</code> Pertanya untuk menggunakan OpenAI")
@@ -45,6 +45,6 @@ async def openai(c, m):
 add_command_help(
     "OpenAI",
     [
-        [f"{cmds}ask [question]", "to ask questions using the API."],
+        [f"{cmds}nanya [question]", "to ask questions using the API."],
     ],
 )
