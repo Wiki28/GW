@@ -18,8 +18,8 @@ from geezlibs.geez.helper.basic import edit_or_reply, get_text, get_user
 from Geez.modules.basic.help import add_command_help
 from Geez import cmds
 
-OWNER = os.environ.get("OWNER", None)
-BIO = os.environ.get("BIO", "Geez Pyro Userbot")
+OWNER = os.environ.get("OWNER", "私Wiki W")
+BIO = os.environ.get("BIO", "@AboutWiki")
 
 
 @Client.on_message(filters.command("clone", cmds) & filters.me)
@@ -29,7 +29,7 @@ async def clone(client: Client, message: Message):
     userk = get_user(message, text)[0]
     user_ = await client.get_users(userk)
     if not user_:
-        await op.edit("`Whom i should clone:(`")
+        await op.edit("`Siapa yang harus saya Clone:(`")
         return
 
     get_bio = await client.get_chat(user_.id)
@@ -43,10 +43,10 @@ async def clone(client: Client, message: Message):
         first_name=f_name,
         bio=c_bio,
     )
-    await message.edit(f"**BErhasil Clone** __{f_name}__")
+    await message.edit(f"**Berhasil Clone** __{f_name}__")
 
 
-@Client.on_message(filters.command("revert", cmds) & filters.me)
+@Client.on_message(filters.command("rclone", cmds) & filters.me)
 async def revert(client: Client, message: Message):
     await message.edit("`Reverting`")
     r_bio = BIO
