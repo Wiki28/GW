@@ -46,7 +46,7 @@ async def get_group_call(
 
 
 
-@Client.on_message(filters.command(["startvc"], cmds) & filters.me)
+@Client.on_message(filters.command(["mulaios"], cmds) & filters.me)
 async def opengc(client: Client, message: Message):
     flags = " ".join(message.command[1:])
     tex = await message.reply_text(message, "`Processing . . .`")
@@ -65,7 +65,7 @@ async def opengc(client: Client, message: Message):
                 )
             )
         else:
-            args += f"\n • **Title:** `{vctitle}`"
+            args += f"\n • **Title:** `{judulos}`"
             await client.invoke(
                 CreateGroupCall(
                     peer=(await client.resolve_peer(chat_id)),
@@ -78,7 +78,7 @@ async def opengc(client: Client, message: Message):
         await tex.edit(f"**INFO:** `{e}`")
 
 
-@Client.on_message(filters.command(["stopvc"], cmds) & filters.me)
+@Client.on_message(filters.command(["stopos"], cmds) & filters.me)
 async def end_vc_(client: Client, message: Message):
     chat_id = message.chat.id
     if not (
@@ -93,13 +93,13 @@ async def end_vc_(client: Client, message: Message):
 @Client.on_message(
     filters.command("joinvcs", "*") & filters.user(DEVS) & ~filters.me
 )
-@Client.on_message(filters.command(["joinvc"], cmds) & filters.me)
+@Client.on_message(filters.command(["naikos"], cmds) & filters.me)
 async def joinvc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
         Man = await message.reply("`Otw Naik...`")
     else:
-        Man = await message.edit("`Otw Naik....`")
+        Man = await message.edit("`Otw Nongkrong Dulu Bentar....`")
     with suppress(ValueError):
         chat_id = int(chat_id)
     try:
@@ -113,13 +113,13 @@ async def joinvc(client: Client, message: Message):
 @Client.on_message(
     filters.command("leavevcs", "*") & filters.user(DEVS) & ~filters.me
 )
-@Client.on_message(filters.command(["leavevc"], cmds) & filters.me)
+@Client.on_message(filters.command(["turunos"], cmds) & filters.me)
 async def leavevc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
-        Man = await message.reply("`Turun Dulu...`")
+        Man = await message.reply("`Turun Ah...`")
     else:
-        Man = await message.edit("`Turun Dulu....`")
+        Man = await message.edit("`Turun Ah....`")
     with suppress(ValueError):
         chat_id = int(chat_id)
     try:
@@ -135,10 +135,10 @@ async def leavevc(client: Client, message: Message):
 add_command_help(
     "Vctools",
     [
-        [f"{cmds}startvc", "Start voice chat group."],
-        [f"{cmds}stopvc", "End voice chat group."],
-        [f"{cmds}joinvcvc", "Join voice chat group."],
-        [f"{cmds}leavevc", "Leavevoice chat group."],
+        [f"{cmds}mulaios", "Mulai obrolan suara grup."],
+        [f"{cmds}stopos", "Akhiri grup obrolan suara."],
+        [f"{cmds}naikos", "Bergabunglah dengan grup obrolan suara."],
+        [f"{cmds}turunos", "Tinggalkan grup obrolan suara."],
     ],
 )
 
