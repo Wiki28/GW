@@ -18,10 +18,6 @@ from Geez import cmds
 @Client.on_message(filters.command("jamet", cmd) & filters.me)
 async def ngejamet(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     xx = await edit_or_reply(message, "**WOII**")
     await asyncio.sleep(1.5)
     await xx.edit("**WOI NGENTOT**")
@@ -52,10 +48,6 @@ async def ngejamet(client: Client, message: Message):
 async def globalfake(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     user = await client.get_users(user_id)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Lo GaBisa Gban dia ngentod!!!**"
-        )
     xx = await edit_or_reply(message, f"Memulai Proses Global Banned [{user.first_name}](tg://user?id={user.id})")
     await asyncio.sleep(3)
     await xx.edit("`Gbanning....`")
@@ -71,10 +63,7 @@ async def globalfake(client: Client, message: Message):
 async def fakegmute(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     user = await client.get_users(user_id)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Lo GaBisa Gmute dia ngentod!!!**"
-        )
+
     xx = await edit_or_reply(message, f"Memulai Proses Global mute [{user.first_name}](tg://user?id={user.id})")
     await asyncio.sleep(3)
     await xx.edit("`Memulai Proses Global mute....`")
@@ -97,10 +86,6 @@ async def ywc(client: Client, message: Message):
 @Client.on_message(filters.command("pp", cmd) & filters.me)
 async def toxicpp(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -114,10 +99,6 @@ async def toxicpp(client: Client, message: Message):
 @Client.on_message(filters.command("dp", cmd) & filters.me)
 async def toxicdp(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -131,10 +112,6 @@ async def toxicdp(client: Client, message: Message):
 @Client.on_message(filters.command("so", cmd) & filters.me)
 async def toxicso(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -148,14 +125,6 @@ async def toxicso(client: Client, message: Message):
 @Client.on_message(filters.command("nb", cmd) & filters.me)
 async def toxicnb(client: Client, message: Message):
     user_id = await extract_user(message)
-    if message.chat.id in BLACKLIST_CHAT:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Bacot di grup Ini!**"
-        )
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -169,10 +138,6 @@ async def toxicnb(client: Client, message: Message):
 @Client.on_message(filters.command("met", cmd) & filters.me)
 async def toxicmet(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -186,10 +151,6 @@ async def toxicmet(client: Client, message: Message):
 @Client.on_message(filters.command("war", cmd) & filters.me)
 async def toxicwer(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -203,10 +164,6 @@ async def toxicwer(client: Client, message: Message):
 @Client.on_message(filters.command("wartai", cmd) & filters.me)
 async def toxicwartai(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -220,10 +177,6 @@ async def toxicwartai(client: Client, message: Message):
 @Client.on_message(filters.command("kismin", cmd) & filters.me)
 async def toxickismin(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -237,10 +190,6 @@ async def toxickismin(client: Client, message: Message):
 @Client.on_message(filters.command("ded", cmd) & filters.me)
 async def toxicded(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -254,10 +203,6 @@ async def toxicded(client: Client, message: Message):
 @Client.on_message(filters.command("sokab", cmd) & filters.me)
 async def toxicsokab(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -271,10 +216,6 @@ async def toxicsokab(client: Client, message: Message):
 @Client.on_message(filters.command("gembel", cmd) & filters.me)
 async def toxicgembel(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -288,10 +229,6 @@ async def toxicgembel(client: Client, message: Message):
 @Client.on_message(filters.command("cuih", cmd) & filters.me)
 async def toxiccuih(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -305,10 +242,6 @@ async def toxiccuih(client: Client, message: Message):
 @Client.on_message(filters.command("dih", cmd) & filters.me)
 async def toxicdih(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -322,14 +255,6 @@ async def toxicdih(client: Client, message: Message):
 @Client.on_message(filters.command("gcs", cmd) & filters.me)
 async def toxicgcs(client: Client, message: Message):
     user_id = await extract_user(message)
-    if message.chat.id in BLACKLIST_CHAT:
-        return await edit_or_reply(
-            message, "**Jangan Belagu Di Gc ini Kontol!**"
-        )
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -343,10 +268,6 @@ async def toxicgcs(client: Client, message: Message):
 @Client.on_message(filters.command("skb", cmd) & filters.me)
 async def toxicskb(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     await asyncio.gather(
         message.delete(),
         client.send_message(
@@ -360,10 +281,6 @@ async def toxicskb(client: Client, message: Message):
 @Client.on_message(filters.command("virtual", cmd) & filters.me)
 async def toxicvirtual(client: Client, message: Message):
     user_id = await extract_user(message)
-    if user_id in DEVS:
-        return await edit_or_reply(
-            message, "**Jangan Coba Coba Roasting Pembuat Gua lah Kontol!**"
-        )
     xx = await edit_or_reply(message, "**OOOO**")
     await asyncio.sleep(1.5)
     await xx.edit("**INI YANG VIRTUAL**")
