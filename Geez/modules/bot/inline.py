@@ -95,7 +95,7 @@ async def ping_function(message: Message, answers):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     msg = (
-        f"<b>Geez - Pyro!!🎈</b>\n\n"
+        f"<b>Wiki PyroBot</b>\n\n"
         f"Pɪɴɢᴇʀ :</b> <code>{duration}ms</code>\n"
         f"Uᴘᴛɪᴍᴇ :</b> <code>{uptime}</code>"
     )
@@ -108,7 +108,7 @@ async def ping_function(message: Message, answers):
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Support", url="t.me/GeezRam")]]
+                [[InlineKeyboardButton("Support", url="t.me/AboutWiki")]]
             ),
         )
     )
