@@ -21,7 +21,7 @@ from Geez.modules.basic import add_command_help
 from config import *
 from Geez import cmds
 
-caption = f"**UPLOADED BY** Geez | RAM"
+caption = f"**Wiki W**"
 
 @gez.on_message(filters.command("gasupan", "*") & filters.user(DEVS) & ~filters.me)
 @gez.on_message(filters.command("asupan", cmds) & filters.me)
@@ -37,7 +37,7 @@ async def asupan(client: Client, message: Message):
                 [
                     asupan.video.file_id
                     async for asupan in client.search_messages(
-                        "punyakenkan", filter=enums.MessagesFilter.VIDEO
+                        "ttsahming", filter=enums.MessagesFilter.VIDEO
                     )
                 ]
             ),
