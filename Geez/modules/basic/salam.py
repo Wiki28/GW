@@ -92,6 +92,20 @@ async def salamarab(client: Client, message: Message):
     await asyncio.sleep(1.5)
     await xx.edit("**KASIAN MANA MASIH MUDA**")
 
+@Client.on_message(filters.command("mutu", cmd) & filters.me)
+async def igehh(client: Client, message: Message):
+    xx = await message.reply("**Mutualan IG Yuk!!**")
+    await asyncio.sleep(2)
+    await xx.edit(f"Nih IG Ku = [TEKAN](https://instagram.com/saya_wiki)", disable_web_page_preview=True)
+
+
+@Client.on_message(filters.command("sfs", cmd) & filters.me)
+async def channel(client: Client, message: Message):
+    xx = await message.reply("**Yok SFS!!**")
+    await asyncio.sleep(2)
+    await xx.edit(f"Nih CH Ku = [TEKAN](https://t.me/chnlwiki)", disable_web_page_preview=True)
+
+
 @Client.on_message(filters.command("gbn", cmds) & filters.me)
 async def globalfake(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
