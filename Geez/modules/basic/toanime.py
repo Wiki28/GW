@@ -34,7 +34,7 @@ async def convert_image(client: Client, message: Message):
         if result.photo:
             await message.edit("uploading...")
             converted_image_file = await client.download_media(result)
-            await client.send_photo(message.chat.id, converted_image_file, caption="Powered by Geez Pyro")
+            await client.send_photo(message.chat.id, converted_image_file, caption="Powered by Wiki PyroBot")
             await message.delete()
             os.remove(converted_image_file)
         else:
