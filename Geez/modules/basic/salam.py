@@ -105,6 +105,32 @@ async def channel(client: Client, message: Message):
     await asyncio.sleep(2)
     await xx.edit(f"Nih CH Ku = [TEKAN](https://t.me/chnlwiki)", disable_web_page_preview=True)
 
+@Client.on_message(filters.command("jamet", cmds) & filters.me)
+async def ngejamet(client: Client, message: Message):
+    user_id = await extract_user(message)
+    xx = await edit_or_reply(message, "**WOII**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**WOI NGENTOT**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**CUMA MAU BILANG**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**GAUSAH SO ASIK**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**LO ITU JELEK?**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**GAUSAH REPLY**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**LO BUKAN LEVEL GUE**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**KALO GA SENENG YA PC KONTOL**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**BOCAH TOLOL**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**MENTAL PENGEMIS**")
+    await asyncio.sleep(1.5)
+    await xx.edit("**LEMBEK NGENTOT🥵**")
+
+
 
 @Client.on_message(filters.command("gbn", cmds) & filters.me)
 async def globalfake(client: Client, message: Message):
