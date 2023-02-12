@@ -19,7 +19,7 @@ async def openai(c, m):
     question = m.text.split(" ", maxsplit=1)[1]
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {OPENAI_API}",
+        "Authorization": "Bearer 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",
     }
 
     json_data = {
