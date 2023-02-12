@@ -34,17 +34,9 @@ async def convert_image(client: Client, message: Message):
         if result.photo:
             await message.edit("uploading...")
             converted_image_file = await client.download_media(result)
-            await client.send_photo(message.chat.id, converted_image_file, caption="Powered by Wiki PyroBot")
+            await client.send_photo(message.chat.id, converted_image_file, caption="Powered by Wiki PyroBot!!")
             await message.delete()
             os.remove(converted_image_file)
         else:
-            await message.edit("`error message ...`")
-
-
-
-add_command_help(
-    "anime ai",
-    [
-        [f"{cmds}toanime", "convert foto ke anime menggunakan ai bot"],
-    ],
-)
+            await message.edit("`error ...`")
+    await client.delete_messages(bot, 2)
