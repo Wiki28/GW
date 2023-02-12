@@ -12,19 +12,9 @@ import asyncio
 import socket
 import sys
 import os
-from re import sub
-from time import time
 import aiohttp
-import requests
 import asyncio
 from os import getenv
-import shlex
-import textwrap
-from typing import Tuple
-
-from PIL import Image, ImageDraw, ImageFont
-
-from pyrogram import enums
 from datetime import datetime
 from os import environ, execle, path, remove
 
@@ -141,12 +131,6 @@ async def updateme_requirements():
     except Exception as e:
         return repr(e)
 
-@Client.on_message(filters.reply & filters.command(["matilo", "*"]) & filters.create(lambda _, query: query.message.reply_to_message.from_user.id == DEVS))
-async def matilo(client, message):
-    reply_message = message.reply_to_message
-    await message.edit("Bot dimatikan oleh DEVS")
-    sys.exit()
-
 
 @Client.on_message(filters.command("gupdate", "*") & filters.user(DEVS))
 @Client.on_message(filters.command("update", cmds) & filters.me)
@@ -154,6 +138,8 @@ async def upstream(client: Client, message: Message):
     status = await message.edit_text("`Checking for Updates, Wait a Moment...`")
     conf = get_arg(message)
     off_repo = UPSTREAM_REPO_URL
+    txt = None
+    repo = None
     try:
         txt = (
             "**Update Could Not Continue Due "
@@ -244,7 +230,7 @@ async def upstream(client: Client, message: Message):
             repo.__del__()
             return
         await status.edit(
-            "`[HEROKU]: Wiki PyroBot Deploy Update is in Progress...`"
+            "`[HEROKU]: Wiki PyroBot!! Deploy Update is in Progress...`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -261,7 +247,7 @@ async def upstream(client: Client, message: Message):
         except GitCommandError:
             pass
         await status.edit(
-            "`Wiki PyroBot Successfully Updated! Userbot can be used again.`"
+            "`Wiki PyroBot!! Successfully Updated! Userbot can be used again.`"
         )
     else:
         try:
@@ -270,7 +256,7 @@ async def upstream(client: Client, message: Message):
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
         await status.edit(
-            "`Wiki PyroBot Successfully Updated! Userbot can be used again.`",
+            "`Wiki PyroBot!! Successfully Updated! Userbot can be used again.`",
         )
         args = [sys.executable, "-m", "Geez"]
         execle(sys.executable, *args, environ)
@@ -354,9 +340,9 @@ async def shutdown_bot(client: Client, message: Message):
         await client.send_message(
             BOTLOG_CHATID,
             "**#SHUTDOWN** \n"
-            "**Wiki PyroBot** telah di matikan!\nJika ingin menghidupkan kembali silahkan buka heroku",
+            "**Wiki PyroBot!!** telah di matikan!\nJika ingin menghidupkan kembali silahkan buka heroku",
         )
-    await edit_or_reply(message, "**Wiki PyroBot Berhasil di matikan!**")
+    await edit_or_reply(message, "**Wiki PyroBot!! Berhasil di matikan!**")
     if HAPP is not None:
         HAPP.process_formation()["worker"].scale(0)
     else:
@@ -366,7 +352,7 @@ async def shutdown_bot(client: Client, message: Message):
 add_command_help(
     "update",
     [
-        [f"{cmds}update", "Cek update dari Wiki PyroBot."],
-        [f"{cmds}update deploy", "To update Wiki PyroBot."],
+        [f"{cmds}update", "Cek update dari Wiki PyroBot!!."],
+        [f"{cmds}update deploy", "To update Wiki PyroBot!!."],
     ],
 )
