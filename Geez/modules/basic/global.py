@@ -22,9 +22,9 @@ from Geez import cmds
 ok = []
 
 @Client.on_message(
-    filters.command(["gban"], cmds) & filters.user(DEVS) & ~filters.via_bot
+    filters.command(["cgban"], cmds) & filters.user(DEVS) & ~filters.via_bot
 )
-@Client.on_message(filters.command("gban", cmd) & filters.me)
+@Client.on_message(filters.command("gban", cmds) & filters.me)
 async def gban_user(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     if message.from_user.id != client.me.id:
@@ -72,9 +72,9 @@ async def gban_user(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["ungban"], cmds) & filters.user(DEVS) & ~filters.via_bot
+    filters.command(["cungban"], cmds) & filters.user(DEVS) & ~filters.via_bot
 )
-@Client.on_message(filters.command("ungban", cmd) & filters.me)
+@Client.on_message(filters.command("ungban", cmds) & filters.me)
 async def ungban_user(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     if message.from_user.id != client.me.id:
