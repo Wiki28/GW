@@ -119,7 +119,7 @@ async def ungban_user(client: Client, message: Message):
         return
 
 
-@Client.on_message(filters.command("listgban", cmd) & filters.me)
+@Client.on_message(filters.command("listgban", cmds) & filters.me)
 async def gbanlist(client: Client, message: Message):
     users = (await Geez.gban_list())
     oof = "**#GBanned Users:**\n"
