@@ -11,11 +11,12 @@ APScheduler==3.7.0
 aiohttp
 aiofiles
 bs4
+emoji==1.6.0
 googlesearch-python==1.0.1
 gitpython
 httpx[http2]
 humanize
-geezlibs==1.6.5
+geezlibs==1.6.11
 gTTs
 httpx
 heroku3
