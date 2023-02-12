@@ -95,7 +95,7 @@ async def ping_function(message: Message, answers):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     msg = (
-        f"<b>Wiki PyroBot</b>\n\n"
+        f"<b>Wiki PyroBot!!</b>\n\n"
         f"Pɪɴɢᴇʀ :</b> <code>{duration}ms</code>\n"
         f"Uᴘᴛɪᴍᴇ :</b> <code>{uptime}</code>"
     )
@@ -108,7 +108,7 @@ async def ping_function(message: Message, answers):
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Support", url="t.me/AboutWiki")]]
+                [[InlineKeyboardButton("About Wiki", url="t.me/AboutWiki")]]
             ),
         )
     )
@@ -129,6 +129,12 @@ async def help_function(answers):
     )
     return answers
 
+@app.on_callback_query()
+def pmowner(client, callback_query):
+    user_id = OWNER_ID
+    message = "saya ingin bertanya kak"
+    client.send_message(user_id, message)
+    client.answer_callback_query(callback_query.id, text="Message sent")
 
 @app.on_inline_query()
 @inline_wrapper
