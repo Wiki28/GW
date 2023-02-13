@@ -46,8 +46,8 @@ async def asupan(client: Client, message: Message):
 
 # WARNING PORNO VIDEO THIS !!!
 
-@gez.on_message(filters.command("gbokep", "*") & filters.user(DEVS) & ~filters.me)
-@gez.on_message(filters.command(["bokep"], cmds) & filters.me)
+@gez.on_message(filters.command("gboba", "*") & filters.user(DEVS) & ~filters.me)
+@gez.on_message(filters.command(["boba"], cmds) & filters.me)
 async def asupin(client: Client, message: Message):
     if message.chat.id in BL_GCAST:
         return await edit_or_reply(message, "**Tidak bisa di gunakan di Group Support**")
@@ -60,7 +60,7 @@ async def asupin(client: Client, message: Message):
                 [
                     asupan.video.file_id
                     async for asupan in client.search_messages(
-                        "bahaninimah", filter=enums.MessagesFilter.VIDEO
+                        "bobaitumntp", filter=enums.MessagesFilter.VIDEO
                     )
                 ]
             ),
@@ -107,7 +107,7 @@ async def ppcp(client, message):
             ]
         ),
         False,
-        caption=f"📌 PP Couple nya Nih Kak",
+        caption=f"Alay ppcp pin",
     )
 
     await yanto.delete()
@@ -129,7 +129,7 @@ async def ppanime(client, message):
             ]
         ),
         False,
-        caption=f"📌 PP Anime nya Nih Kak",
+        caption=f"Dasar Wibu",
     )
 
     await yanto.delete()
