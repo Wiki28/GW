@@ -123,9 +123,7 @@ async def hearts(client: Client, message: Message):
     await message.edit("❤️ I Love You <3")
 
 
-@Client.on_message(
-    filters.me & (filters.command(("loveyou", cmds) & filters.me)
-)
+@Client.on_message(filters.command("loveyou", cmds) & filters.me)
 async def _(client: Client, message: Message):
     noble = random.randint(1, len(NOBLE) - 2)
     reply_text = NOBLE[noble]
