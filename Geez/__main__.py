@@ -10,22 +10,22 @@ from Geez.modules import ALL_MODULES
 
 
 MSG_ON = """
-**Geez Pyro Userbot**
+**Wiki PyroBot**
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 **Userbot Version -** `{}`
 **Geez Library Version - `{}`**
-**Ketik** `{}geez` **untuk Mengecheck Bot**
+**Ketik** `{}wiki` **untuk Mengecheck Bot**
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
-©️2023 Geez|RAM Projects
+©️2023 私Wiki W Projects
 """
-MSG_BOT = (f"**Geez Pyro Assistant**\nis alive...")
+MSG_BOT = (f"**Wiki PyroBot Assistant**\nis alive...")
 
 
 
 
 async def main():
     await app.start()
-    LOGGER("Geez").info("Memulai Geez Pyro..")
+    LOGGER("Geez").info("Memulai Wiki PyroBot..")
     LOGGER("Geez").info("Loading Everything.")
     for all_module in ALL_MODULES:
         importlib.import_module("Geez.modules" + all_module)
