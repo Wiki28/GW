@@ -110,7 +110,7 @@ async def phase4(message):
         await asyncio.sleep(SLEEP)
 
 
-@Client.on_message(filters.command([f"{cmds}heart", "love"], cmds) & filters.me)
+@Client.on_message(filters.command("ilove", cmds) & filters.me)
 async def hearts(client: Client, message: Message):
     await phase1(message)
     await asyncio.sleep(SLEEP * 3)
@@ -124,7 +124,7 @@ async def hearts(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.me & (filters.command([f"{cmds}loveyou"], cmds) | filters.regex("^loveyou "))
+    filters.me & (filters.command(("loveyou", cmds) & filters.me)
 )
 async def _(client: Client, message: Message):
     noble = random.randint(1, len(NOBLE) - 2)
@@ -183,7 +183,7 @@ async def hello_world(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.me & (filters.command([f"{cmds}ahh"], cmds) | filters.regex("^ahh "))
+    filters.me & (filters.command("ahh", cmds) & filters.me)
 )
 async def ahh(client: Client, message: Message):
     mg = await edit_or_reply(message, "ahh")
@@ -203,7 +203,7 @@ async def ahh(client: Client, message: Message):
     await mg.edit("aaahhhhhhhh")
 
 
-@Client.on_message(filters.command("brain", cmds) & filters.me)
+@Client.on_message(filters.command("otak", cmds) & filters.me)
 async def pijtau(client: Client, message: Message):
     if message.forward_from:
         return
@@ -232,7 +232,7 @@ async def pijtau(client: Client, message: Message):
         await message.edit(animation_chars[i % 14])
 
 
-@Client.on_message(filters.command("bomb", cmds) & filters.me)
+@Client.on_message(filters.command("bom", cmds) & filters.me)
 async def gahite(client: Client, message: Message):
     if message.forward_from:
         return
@@ -264,26 +264,26 @@ async def hajqag(client: Client, message: Message):
         return
     animation_interval = 3
     animation_ttl = range(0, 18)
-    await message.edit("Calling Pavel Durov (ceo of telegram)......")
+    await message.edit("Memanggil Pavel Durov (ceo of telegram)......")
     animation_chars = [
-        "`Connecting To Telegram Headquarters...`",
-        "`Call Connected.`",
-        "`Telegram: Hello This is Telegram HQ. Who is this?`",
-        f"`Me: Yo this is` {DEFAULTUSER} ,`Please Connect me to my lil bro,Pavel Durov `",
-        "`User Authorised.`",
-        "`Calling Durov`  `At +916969696969`",
-        "`Private  Call Connected...`",
-        "`Me: Hello Sir, Please Ban This Telegram Account.`",
-        "`Durov : May I Know Who Is This?`",
-        f"`Me: Yo Brah, I Am` {DEFAULTUSER} ",
-        "`Durov : OMG!!! Long time no see, Wassup cat...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
-        "`Me: Thanks, See You Later Brah.`",
-        "`Durov : Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
-        "`Me: Is There Any Issue/Emergency???`",
-        "`Durov : Yes Sur, There Is A Bug In Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
-        "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
-        "`Durov : Sure Sur \nTC Bye Bye :)`",
-        "`Private Call Disconnected.`",
+        "`Menghubungkan ke Markas Telegram...`",
+        "`Panggilan Terhubung.`",
+        "`Telegram: Halo Ini markas Telegram. Siapa ini?`",
+        f"`Saya: Yo saya` {DEFAULTUSER} ,`Tolong Hubungkan saya dengan adik saya, Pavel Durov `",
+        "`Telegram: Tunggu sebentar saya hubungkan.`",
+        "`Memanggil Durov`  `Pada +916969696969`",
+        "`Panggilan Pribadi Terhubung...`",
+        "`Saya : Halo Pak Tolong Ban Akun Telegram Ini.`",
+        "`Durov : Bolehkah Saya Tahu Siapa Ini?`",
+        f"`Saya: Yo bro, saya` {DEFAULTUSER} ",
+        "`Durov : OMG!!! Lama tidak bertemu, bagaimana kabarmu...\Saya Akan Memastikan Akun Itu Akan Diblokir Dalam 24 Jam.`",
+        "`Saya: Terima kasih, Sampai jumpa lagi Bro.`",
+        "`Durov : Tolong Jangan Terima Kasih Bro, Telegram Milik Kami. Beri Aku Panggilan Saat Anda Tidak Sibuk.`",
+        "`Saya: Apakah Ada Masalah/Darurat???`",
+        "`Durov : Ya Bro, Ada Bug Di Telegram v69.6.9.\nSaya Tidak Mampu Memperbaikinya. Jika Memungkinkan, Tolong Bantu Perbaiki Bug.`",
+        "`Saya: Kirimi Saya Aplikasi Di Akun Telegram Saya, Saya Akan Memperbaiki Bug & Mengirim Anda.`",
+        "`Durov : Tentu Bro \nTerimakasih Bye Bye :)`",
+        "`Panggilan Pribadi Terputus.`",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -423,12 +423,12 @@ async def timer_blankx(client: Client, message: Message):
         await asyncio.sleep(1)
     await asyncio.sleep(1)
     await message.edit(
-        "`Tesla Wireless Charging (beta) Completed...\nDevice Detected: Nokia 1100 (Space Grey Varient)\nBattery Percentage:` [100%](https://telegra.ph/file/a45aa7450c8eefed599d9.mp4) ",
+        "`Pengisian Nirkabel Tesla (beta) Lengkap...\nPerangkat Terdeteksi: Nokia 1100 (Space Grey Varient)\nBattery Percentage:` [100%](https://telegra.ph/file/a45aa7450c8eefed599d9.mp4) ",
         link_preview=True,
     )
 
 
-@Client.on_message(filters.command([f"{cmds}koc", "kocok"], cmds) & filters.me)
+@Client.on_message(filters.command("coli", cmds) & filters.me)
 async def kocok(client: Client, message: Message):
     e = await edit_or_reply(message, "8✊===D")
     await e.edit("8=✊==D")
@@ -458,11 +458,11 @@ async def kocok(client: Client, message: Message):
     await e.edit("8✊===D💦💦💦💦💦💦💦💦")
     await e.edit("8===✊D💦💦💦💦💦💦💦💦💦")
     await e.edit("8==✊=D💦💦💦💦💦💦💦💦💦💦")
-    await e.edit("8=✊==D That's why it's over?")
+    await e.edit("8=✊==D ahh dh keluar")
     await e.edit("RIP 😭😭😭😭")
 
 
-@Client.on_message(filters.command([f"{cmds}fuck", "fucek"], cmds) & filters.me)
+@Client.on_message(filters.command("fucek", cmds) & filters.me)
 async def ngefuck(client: Client, message: Message):
     e = await edit_or_reply(message, ".                       /¯ )")
     await e.edit(".                       /¯ )\n                      /¯  /")
@@ -501,11 +501,11 @@ async def hak(client: Client, message: Message):
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 0%\n[░░░░░░░░░░░░░░░░░░░░]\n`Looking for WhatsApp...`\nETA: 0m, 20s"
+        "Hacking... 0%\n[░░░░░░░░░░░░░░░░░░░░]\n`Mencari WhatsApp...`\nETA: 0m, 20s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 11.07%\n[██░░░░░░░░░░░░░░░░░░]\n`Looking for WhatsApp...`\nETA: 0m, 18s"
+        "Hacking... 11.07%\n[██░░░░░░░░░░░░░░░░░░]\n`Mencari WhatsApp...`\nETA: 0m, 18s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
@@ -595,17 +595,17 @@ async def adadino(client: Client, message: Message):
     await typew.edit("`🏃           🦖`")
     await typew.edit("`🏃          🦖`")
     await typew.edit("`🏃         🦖`")
-    await typew.edit("`HE WAS GETTING CLOSER!!!`")
+    await typew.edit("`DIA SEMAKIN DEKAT!!!`")
     await asyncio.sleep(1)
     await typew.edit("`🏃       🦖`")
     await typew.edit("`🏃      🦖`")
     await typew.edit("`🏃     🦖`")
     await typew.edit("`🏃    🦖`")
-    await typew.edit("`Just give up`")
+    await typew.edit("`Menyerah saja`")
     await asyncio.sleep(1)
     await typew.edit("`🧎🦖`")
     await asyncio.sleep(2)
-    await typew.edit("`-DIED-`")
+    await typew.edit("`-MATI-`")
 
 
 @Client.on_message(filters.command([f"{cmds}sayang", "lover"], cmds) & filters.me)
@@ -862,11 +862,11 @@ async def helikopter(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("tembak", cmds) & filters.me)
+@Client.on_message(filters.command("dor", cmds) & filters.me)
 async def dornembak(client: Client, message: Message):
     await edit_or_reply(
         message,
-        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**Do you want to be my boyfriend??!**",
+        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**Dor.. Sayang mau nggak jadi pacarku??!**",
     )
 
 
@@ -874,7 +874,7 @@ async def dornembak(client: Client, message: Message):
 async def ngebundir(client: Client, message: Message):
     await edit_or_reply(
         message,
-        "`Drugs Everything...`          \n　　　　　|"
+        "`Bye ku mau BUDI...`          \n　　　　　|"
         "\n　　　　　| \n"
         "　　　　　| \n"
         "　　　　　| \n"
@@ -891,7 +891,7 @@ async def ngebundir(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command([f"{cmds}awk", "awikwok"], cmds) & filters.me)
+@Client.on_message(filters.command([f"{cmds}awk", "awokawok"], cmds) & filters.me)
 async def awikwok(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -964,7 +964,7 @@ async def anjg(client: Client, message: Message):
 @Client.on_message(filters.command("nah", cmds) & filters.me)
 async def nahlove(client: Client, message: Message):
     typew = await edit_or_reply(
-        message, "`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *This is for you`"
+        message, "`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *Ini untuk mu`"
     )
     await asyncio.sleep(2)
     await typew.edit("`\n(\\_/)`" "`\n(●_●)`")
@@ -972,11 +972,11 @@ async def nahlove(client: Client, message: Message):
 
 @Client.on_message(filters.command("santet", cmds) & filters.me)
 async def santet(client: Client, message: Message):
-    typew = await edit_or_reply(message, "`Enabling Online Witchcraft Command....`")
+    typew = await edit_or_reply(message, "`Ku santet kau anak anjieng....`")
     await asyncio.sleep(2)
-    await typew.edit("`Searching for This Person's Name...`")
+    await typew.edit("`Mencari nama anak haram ini...`")
     await asyncio.sleep(1)
-    await typew.edit("`Online Witchcraft to be Done Immediately`")
+    await typew.edit("`Mampus kau ku santet juga sekarang`")
     await asyncio.sleep(1)
     await typew.edit("0%")
     number = 1
@@ -1279,7 +1279,7 @@ async def santet(client: Client, message: Message):
     await asyncio.sleep(0.03)
     await typew.edit(str(number) + "%   ████████████████▌")
     await asyncio.sleep(1)
-    await typew.edit("**Target Successfully Stuck Online 🥴**")
+    await typew.edit("**Mampus ente, dlm satu jam gk nafas mati kau**")
 
 
 add_command_help(
