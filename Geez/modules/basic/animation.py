@@ -24,7 +24,7 @@ from geezlibs.geez.helper.constants import MEMES
 from Geez import cmds
 from Geez.modules.basic.help import *
 
-DEFAULTUSER = "Man"
+DEFAULTUSER = "Wiki W"
 
 
 NOBLE = [
@@ -606,7 +606,7 @@ async def adadino(client: Client, message: Message):
     await typew.edit("`-MATI-`")
 
 
-@Client.on_message(filters.command([f"{cmds}sayang", "lover"], cmds) & filters.me)
+@Client.on_message(filters.command("sayang", cmds) & filters.me)
 async def zeyenk(client: Client, message: Message):
     e = await edit_or_reply(message, "I LOVEE YOUUU 💕")
     await e.edit("💝💘💓💗")
@@ -837,7 +837,7 @@ async def menggabut(client: Client, message: Message):
     await e.edit("`GABUT`")
 
 
-@Client.on_message(filters.command([f"{cmds}helikopter", "heli"], cmds) & filters.me)
+@Client.on_message(filters.command("heli", cmds) & filters.me)
 async def helikopter(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -889,7 +889,7 @@ async def ngebundir(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command([f"{cmds}awk", "awokawok"], cmds) & filters.me)
+@Client.on_message(filters.command("awok", cmds) & filters.me)
 async def awikwok(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -946,7 +946,7 @@ async def babi(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command([f"{cmds}ajg", "anjg"], cmds) & filters.me)
+@Client.on_message(filters.command("ajg", cmds) & filters.me)
 async def anjg(client: Client, message: Message):
     await edit_or_reply(
         message,
