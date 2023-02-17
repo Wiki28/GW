@@ -8,14 +8,15 @@ load_dotenv(".env")
 API_ID = int(getenv("API_ID", "8529843")) #optional
 API_HASH = getenv("API_HASH", "6e06fb8f7b42fb33821f272597321bc1") #optional
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
-OWNER_ID = getenv("OWNER_ID", "")
+OWNER_ID = getenv("OWNER_ID")
 MONGO_URL = getenv("MONGO_URL", "mongodb+srv://not:not@cluster0.8rcyhkd.mongodb.net/?retryWrites=true&w=majority")
 BOT_TOKEN = getenv("BOT_TOKEN", "5955445604:AAHfetV9cxbp9s9YCCJU3GxKgYLwuZ2lvb8")
 ALIVE_PIC = getenv("ALIVE_PIC")
 ALIVE_TEXT = getenv("ALIVE_TEXT")
-PM_LOGGER = getenv("PM_LOGGER", "-1001667983274")
-OPENAI_API = getenv("OPENAI_API", "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")
+PM_LOGGER = getenv("PM_LOGGER")
+OPENAI_API = getenv("OPENAI_API")
 BOTLOG_CHATID = int(getenv("BOTLOG_CHATID") or 0)
+BLACKLIST_GCAST = {int(x) for x in getenv("BLACKLIST_GCAST", "").split()}
 GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
 REPO_URL = getenv("REPO_URL", "https://github.com/Wiki28/GW")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
